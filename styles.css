@@ -192,12 +192,11 @@
 
 /* Container Utama Menggunakan Grid Layaknya Dashboard Premium */
 .profile-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  background-color: #f8fafc; /* Warna background abu-abu sangat lembut */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;         /* Batas lebar maksimal konten agar tidak melar */
+  margin: 80px auto;         /* Atas-bawah memberi jarak dari navbar, KIRI-KANAN AUTO bikin POSISI TENGAH */
+  padding: 0 24px;           /* Jarak aman di sisi layar saat dibuka lewat HP */
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Base Style untuk Kartu Premium */
@@ -333,3 +332,53 @@
       .hero-grid,.modules,.campus-strip,.footer-grid{grid-template-columns:1fr}
       .hero-card{padding:36px}.nav-links{display:none}.photo-card{min-height:360px}
     }
+
+.swiper.mySwiper {
+  width: 100%;
+  padding-bottom: 60px;      /* Ruang kosong di bawah untuk menaruh titik indikator */
+  position: relative;
+}
+
+/* Memaksa elemen slide menengahkan kartu di dalamnya */
+.swiper-slide {
+  display: flex;
+  justify-content: center;   /* Mantra utama agar kartu profil pas duduk di tengah-tengah slide */
+  height: auto;              /* Menyelaraskan tinggi kartu secara otomatis */
+}
+
+/* Menyesuaikan kembali layout kartu premium agar bersahabat dengan Swiper */
+.premium-card {
+  width: 100%;
+  max-width: 550px;          /* Batas lebar kartu biar teks dosen yang panjang tetap enak dibaca */
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(15, 76, 129, 0.06);
+  box-shadow: 0 10px 30px rgba(15, 76, 129, 0.03);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Kustomisasi warna tombol panah kiri-kanan agar senada dengan tema utama */
+.swiper-button-next, 
+.swiper-button-prev {
+  color: var(--primary) !important; /* Menggunakan variabel warna biru #0f4c81 kamu */
+  transform: scale(0.7);            /* Mengecilkan sedikit ukuran panah agar terlihat minimalis */
+}
+
+/* Mengatur posisi panah agar sedikit keluar dari area kartu biar tidak menabrak teks */
+.swiper-button-next { right: -10px !important; }
+.swiper-button-prev { left: -10px !important; }
+
+/* Mengubah warna titik navigasi bulat yang sedang aktif */
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
+}
+
+/* Sembunyikan panah navigasi jika dibuka di HP agar layar tidak kesempitan */
+@media (max-width: 768px) {
+  .swiper-button-next, .swiper-button-prev {
+    display: none !important;
+  }
+}
