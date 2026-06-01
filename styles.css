@@ -129,11 +129,7 @@
     }
     .person-row{display:flex;align-items:center;gap:15px}
     .avatar{
-      width:70px;height:70px;border-radius:22px;
-      background:
-        linear-gradient(135deg,rgba(53,208,186,.48),rgba(47,128,237,.5)),
-        url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80') center/cover;
-      border:3px solid #fff;
+      width:70px;height:70px;border-radius:15px;
     }
     .person-card h3{font-size:23px;margin-bottom:5px}
     .person-card p{font-size:14px;color:var(--muted);line-height:1.5}
