@@ -4,11 +4,7 @@ window.addEventListener('load', () => {
   }, 1900);
 });
 
-function toggleMenu(){
-    document
-    .getElementById("navLinks")
-    .classList.toggle("active");
-}
+
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
